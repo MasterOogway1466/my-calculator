@@ -39,3 +39,25 @@ if __name__ == "__main__":
     print("🧮 Calculator Module")
     print(f"2 + 3 = {add(2, 3)}")
     print(f"5 - 2 = {subtract(5, 2)}")
+
+def power(a, b):
+    """Raise a to the power of b with input validation."""
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both arguments must be numbers")
+    
+    print(f"Raising {a} to the power of {b}")  # Added logging
+    result = a ** b
+    print(f"Result: {result}")
+    return result
+
+def sqrt(a): 
+    """Calculate the square root of a number with input validation."""
+    if not isinstance(a, (int, float)):
+        raise TypeError("Input must be a number")
+    if a < 0:
+        raise ValueError("Cannot compute square root of a negative number")
+    
+    print(f"Calculating square root of {a}")  # Added logging
+    result = a ** 0.5
+    print(f"Result: {result}")
+    return result
